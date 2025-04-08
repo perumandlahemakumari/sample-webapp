@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sample-webapp
+  template:
+    metadata:
+      labels:
+        app: sample-webapp
+    spec:
+      containers:
+      - name: sample-webapp
+        image: perumandlahemakumari/sample-webapp:latest
+        ports:
+        - containerPort: 8080
